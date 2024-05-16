@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snake-OpenTK", "Snake-OpenTK\Snake-OpenTK.csproj", "{15B0050F-8167-4335-9744-C82A82EAD334}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15B0050F-8167-4335-9744-C82A82EAD334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15B0050F-8167-4335-9744-C82A82EAD334}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15B0050F-8167-4335-9744-C82A82EAD334}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15B0050F-8167-4335-9744-C82A82EAD334}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {41F19D6B-6B8A-40B5-B558-87AAC1D92F2E}
+	EndGlobalSection
+EndGlobal
