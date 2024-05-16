@@ -55,11 +55,28 @@ namespace primitivs_1
                 }
 
                 var key = KeyboardState;
+                string movementDirection = "right";
 
                 if (key.IsKeyDown(Keys.Escape))
                 {
-                    Console.WriteLine(Keys.Escape.ToString());
-                    Close();
+                    movementDirection = "right";
+                }
+
+                if (key.IsKeyDown(Keys.W))
+                {
+                    movementDirection = "up";
+                }
+                else if (key.IsKeyDown(Keys.A))
+                {
+                    movementDirection = "left";
+                }
+                else if (key.IsKeyDown(Keys.S))
+                {
+                    movementDirection = "down";
+                }
+                else if (key.IsKeyDown(Keys.D))
+                {
+                    movementDirection = "right";
                 }
 
                 field[posX, posY] = true;
