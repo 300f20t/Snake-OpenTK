@@ -11,12 +11,14 @@ namespace primitivs_1
         public class Game : GameWindow
         {
             private static int fieldSize = 10;
-            private bool[,] field = new bool[fieldSize, fieldSize];
+            private byte[,] field = new byte[fieldSize, fieldSize];
             private float frameTime = 0.0f;
             private int fps = 0;
             private int posX = 0;
             private int posY = 0;
             protected string title = "Snake-OpenTK";
+            string _movementDirection = "right";
+
 
             public Game(GameWindowSettings gameWindowSettings, NativeWindowSettings nativeWindowSettings)
                 : base(gameWindowSettings, nativeWindowSettings)
@@ -55,34 +57,45 @@ namespace primitivs_1
                 }
 
                 var key = KeyboardState;
-                string movementDirection = "right";
 
                 if (key.IsKeyDown(Keys.Escape))
                 {
-                    movementDirection = "right";
+                    _movementDirection = "right";
                 }
 
                 if (key.IsKeyDown(Keys.W))
                 {
-                    movementDirection = "up";
+                    _movementDirection = "up";
                 }
                 else if (key.IsKeyDown(Keys.A))
                 {
-                    movementDirection = "left";
+                    _movementDirection = "left";
                 }
                 else if (key.IsKeyDown(Keys.S))
                 {
-                    movementDirection = "down";
+                    _movementDirection = "down";
                 }
                 else if (key.IsKeyDown(Keys.D))
                 {
-                    movementDirection = "right";
+                    _movementDirection = "right";
                 }
 
-                field[posX, posY] = true;
-                field[posX - 1, posY] = false;
+                switch (_movementDirection) {
+                    case "up":
+                        posY++;
+                        break;
+                    case "down":
+                        posY--;
+                        break;
+                    case "left":
+                        posX--;
+                        break;
+                    case "right":
+                        if (posX < fieldSize - 1) posX++;
+                        break;
+                }
 
-                if (posX == fieldSize - 1 && posY < fieldSize - 1) posY++;
+                field[posX, posY] = 1;
 
                 base.OnUpdateFrame(args);
             }
@@ -106,7 +119,7 @@ namespace primitivs_1
                 {
                     for (int j = 0; j < fieldSize; j++)
                     {
-                        if (field[j, i] == true)
+                        if (field[j, i] == 1)
                         {
                             GL.Vertex2(j / 18.0f, i / 18.0f);
                         }
