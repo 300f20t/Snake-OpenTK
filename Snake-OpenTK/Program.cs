@@ -4,7 +4,7 @@ using OpenTK.Windowing.Desktop;
 using OpenTK.Graphics.OpenGL;
 using OpenTK.Windowing.GraphicsLibraryFramework;
 
-namespace primitivs_1
+namespace Snake_OpenTK
 {
     class Program
     {
